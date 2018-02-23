@@ -1,0 +1,14 @@
+{
+  "name": "read-image-ocr",
+  "version": "0.0.1",
+  "description": "script to read stats off splatnet share image",
+  "main": "index.js",
+  "author": "Mike Hsu",
+  "license": "MIT",
+  "dependencies": {
+    "opencv": "^6.0.0"
+  },
+  "scripts": {
+    "start": "node --experimental-modules index.mjs" 
+  }
+}
