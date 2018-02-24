@@ -6,7 +6,7 @@ export default [
         w: 124,
         h: 77,
       tessOpts: {
-        lang: 'splatoon2',
+        lang: 'splatoon1',
       }
     },{
       name: 'player1Weapon',
@@ -21,6 +21,9 @@ export default [
         y: 115,
         w: 34,
         h: 24,
+        tessOpts: {
+          lang: 'splatoon1',
+        }
       },{
       name: 'player1Name',
         x: 719,
