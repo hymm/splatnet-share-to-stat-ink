@@ -6,9 +6,10 @@
   "author": "Mike Hsu",
   "license": "MIT",
   "dependencies": {
-    "opencv": "^6.0.0"
+    "opencv": "^6.0.0",
+    "tesseract.js": "https://github.com/naptha/tesseract.js"
   },
   "scripts": {
-    "start": "node --experimental-modules index.mjs" 
+    "start": "node --experimental-modules index.mjs"
   }
 }
