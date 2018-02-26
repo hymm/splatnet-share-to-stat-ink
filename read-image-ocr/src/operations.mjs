@@ -1,7 +1,8 @@
 import Tact from './tess';
 
 function threshold(im, threshold, max_value, type) {
-  im = im.threshold(threshold, max_value, type);
+  const th = im.threshold(threshold, max_value, type);
+  return th;
 }
 
 function bilateralFilter(im, diameter, sigmaColor, sigmaSpace) {
@@ -57,8 +58,8 @@ async function run(opName, im, options) {
       bilateralFilter(im, ...options.bilateralFilter);
       return;
     case 'threshold':
-      threshold(im, ...options.threshold);
-      return;
+      const th = threshold(im, ...options.threshold);
+      return th;
   }
 }
 
@@ -67,7 +68,11 @@ export default async function runOps(im, options) {
     return;
   }
 
+  let tempIm = im;
   for (const op of options.op) {
-    await run(op, im, options);
+    const resultIm = await run(op, tempIm, options);
+    if (resultIm != null) {
+        tempIm = resultIm;
+    }
   }
 }

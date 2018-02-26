@@ -25,7 +25,9 @@ const playerCropsBase = [
     y: 45,
     w: 135,
     h: 25,
-    op: ['save', 'readText'],
+    op: ['resize', 'threshold', 'save', 'readText'],
+    scale: 4,
+    threshold: [150, 255,  "Threshold to Zero"],
     tessOpts: {
       lang: 'splatoon2',
     }
@@ -38,8 +40,7 @@ const playerCropsBase = [
     h: 18,
     op: ['resize', 'threshold', 'save', 'readText'],
     scale: 4,
-    bilateralFilter: [4, 20, 20],
-    threshold: [235, 255,  "Threshold to Zero"],
+    threshold: [150, 255,  "Threshold to Zero"],
     tessOpts: {
       lang: 'splatoon2',
       tessedit_char_whitelist: '0123456789p'
@@ -51,8 +52,9 @@ const playerCropsBase = [
     y: 63,
     w: 37,
     h: 23,
-    op: ['resize', 'save', 'readText'],
+    op: ['resize', 'threshold', 'save', 'readText'],
     scale: 4,
+    threshold: [120, 255,  "Threshold to Zero"],
     tessOpts: {
       lang: 'splatoon2',
       tessedit_char_whitelist: '0123456789()',
@@ -60,11 +62,13 @@ const playerCropsBase = [
   },
   {
     baseName: 'D',
-    x: 283,
+    x: 281,
     y: 63,
     w: 28,
     h: 23,
-    op: ['save', 'readText'],
+    op: ['resize', 'threshold', 'save', 'readText'],
+    scale: 4,
+    threshold: [160, 255,  "Threshold to Zero"],
     tessOpts: {
       lang: 'splatoon2',
       tessedit_char_whitelist: '0123456789'
@@ -73,10 +77,11 @@ const playerCropsBase = [
   {
     baseName: 'S',
     x: 317,
-    y: 63,
-    w: 24,
+    y: 64,
+    w: 20,
     h: 23,
-    op: ['save', 'readText'],
+    op: ['threshold', 'save', 'readText'],
+    threshold: [160, 255,  "Threshold to Zero"],
     tessOpts: {
       lang: 'splatoon2',
       tessedit_char_whitelist: '0123456789'
@@ -88,7 +93,9 @@ const playerCropsBase = [
     y: 71,
     w: 36,
     h: 12,
-    op: ['save', 'readText'],
+    op: ['resize', 'threshold', 'save', 'readText'],
+    scale: 4,
+    threshold: [100, 255,  "Threshold to Zero"],
     tessOpts: {
       lang: 'splatoon2',
       tessedit_char_whitelist: '0123456789()'
