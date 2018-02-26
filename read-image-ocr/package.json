@@ -5,11 +5,15 @@
   "main": "index.js",
   "author": "Mike Hsu",
   "license": "MIT",
+  "scripts": {
+    "start": "node --experimental-modules src/index.mjs",
+    "prettier": "./node_modules/.bin/prettier --single-quote --write \"src/**/*.{js,jsx,json,css,mjs}\""
+  },
   "dependencies": {
     "opencv": "^6.0.0",
     "tesseract.js": "https://github.com/naptha/tesseract.js"
   },
-  "scripts": {
-    "start": "node --experimental-modules index.mjs"
+  "devDependencies": {
+    "prettier": "^1.10.2"
   }
 }
