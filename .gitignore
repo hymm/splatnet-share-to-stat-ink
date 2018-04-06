@@ -1,2 +1,3 @@
 node_modules
 read-image-ocr/output/*.png
+*.log
