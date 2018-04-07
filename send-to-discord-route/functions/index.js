@@ -41,15 +41,6 @@ function sendBattleImage(req, res) {
   const filename = 'test';
   const imageBuf = Buffer.from(req.body.pngBase64, 'base64');
 
-  console.log(imageBuf.length);
-
-  const message = new Discord.RichEmbed();
-  message.setTitle(`got an image from ${req.body.nickname}`
-  ).setTimestamp(new Date()).attachFile({
-    name: `${filename}.png`,
-    attachment: imageBuf,
-  });
-
   // send to discord
   hook.send('this is an embed', {
     embeds: [{
