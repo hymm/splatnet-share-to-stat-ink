@@ -49,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   handlePress() {
     sendImage(imageShared);
+    imageShared = null;
   }
 
   @override
@@ -63,20 +64,33 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            new Text(
-              'Splatnet Image:',
-            ),
             new Container(
               margin: const EdgeInsets.only(top: 5.0),
               child: imageShared != null ?
                 new Image.memory(imageShared) :
-                new Text('no image')
+                new Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    new Text('1. Go to Official Nintendo Switch App and click Share on the battle you wish to send'),
+                    new Text('2. Click "Share" on the battle you wish to send'),
+                    new Text('3. Select Splat Stats App'),
+                  ],
+                )
               ,
             ),
-            new FlatButton(
+            new RaisedButton(
               color: Colors.blueAccent,
               textColor: Colors.white,
-              child: new Text('Send'),
+              child: new Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  new Container(
+                    margin: new EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 4.0, 0.0),
+                    child: new Text('Send'),
+                  ),
+                  new Icon(Icons.send),
+                ],
+              ),
               onPressed: imageShared != null ? handlePress : null,
             ),
           ],
