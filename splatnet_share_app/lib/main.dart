@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:typed_data';
+import 'share.dart' show sendImage;
 
 void main() => runApp(new MyApp());
 
@@ -61,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         imageShared = sharedImage;
       });
+      sendImage(imageShared);
     }
   }
 
@@ -103,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
             new Container(
               margin: const EdgeInsets.only(top: 5.0),
               child: imageShared != null ?
-                new Image.memory(imageShared, width: 250.0, ) :
+                new Image.memory(imageShared) :
                 new Text('no image')
               ,
             )

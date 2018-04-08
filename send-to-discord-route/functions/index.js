@@ -29,7 +29,7 @@ const battleImageSchema = {
 function sendBattleImage(req, res) {
   // check if body is valid
   if (!validator.validate(req.body, battleImageSchema).valid) {
-    res.send('bad body');
+    res.json({ err: 'bad body' });
     return;
     //send an error
   }
@@ -52,11 +52,11 @@ function sendBattleImage(req, res) {
       attachment: imageBuf,
     }]
   }).then(() => {
-    res.send('success');
+    res.send({ result: 'success' });
     return;
   }).catch((err) => {
     console.log(err);
-    res.send(`Error on send to discord: ${err.message}`);
+    res.send({ err: `Error on send to discord: ${err.message}` });
   });
 }
 
@@ -65,7 +65,7 @@ function sendBattleImageWithErrorHandling(req, res) {
     sendBattleImage(req, res);
   } catch (e) {
     console.log(e);
-    res.send(e.message);
+    res.json({ err: e.message });
   }
 }
 
